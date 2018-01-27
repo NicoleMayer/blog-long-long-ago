@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
 <meta property="og:description" content="网址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-27T05:01:45.837Z">
+<meta property="og:updated_time" content="2018-01-27T05:03:44.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1. Two Sum">
 <meta name="twitter:description" content="网址">
@@ -360,16 +360,7 @@
 </ul>
 <hr>
 <p>#Java标答</p>
-<pre><code>public int[] twoSum(int[] nums, int target) {
-    for (int i = 0; i &lt; nums.length; i++) {
-        for (int j = i + 1; j &lt; nums.length; j++) {
-            if (nums[j] == target - nums[i]) {
-                return new int[] { i, j };
-            }
-        }
-    }
-    throw new IllegalArgumentException(&quot;No two sum solution&quot;);
-}</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, j &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>#C++标答</p>
 
       
