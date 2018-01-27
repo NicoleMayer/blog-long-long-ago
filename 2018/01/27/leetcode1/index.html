@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="#Java标答 public int[] twoSum(int[] nums, int target) {     for (int i = 0; i &amp;lt; nums.length; i++) {         for (int j = i + 1; j &amp;lt; nums.length; j++) {             if (nums[j] == target - nums[i])">
+<meta name="description" content="网址">
 <meta name="keywords" content="code,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1. Two Sum">
 <meta property="og:url" content="http://yoursite.com/2018/01/27/leetcode1/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
-<meta property="og:description" content="#Java标答 public int[] twoSum(int[] nums, int target) {     for (int i = 0; i &amp;lt; nums.length; i++) {         for (int j = i + 1; j &amp;lt; nums.length; j++) {             if (nums[j] == target - nums[i])">
+<meta property="og:description" content="网址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-27T04:54:10.780Z">
+<meta property="og:updated_time" content="2018-01-27T04:57:28.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1. Two Sum">
-<meta name="twitter:description" content="#Java标答 public int[] twoSum(int[] nums, int target) {     for (int i = 0; i &amp;lt; nums.length; i++) {         for (int j = i + 1; j &amp;lt; nums.length; j++) {             if (nums[j] == target - nums[i])">
+<meta name="twitter:description" content="网址">
 
 
 
@@ -355,17 +355,20 @@
       
 
       
-        <p>#Java标答</p>
-<pre><code class="Java">public int[] twoSum(int[] nums, int target) {
-    for (int i = 0; i &lt; nums.length; i++) {
-        for (int j = i + 1; j &lt; nums.length; j++) {
-            if (nums[j] == target - nums[i]) {
-                return new int[] { i, j };
+        <ul>
+<li><a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
+</ul>
+<p>#Java标答</p>
+<pre><code class="Java">    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i &lt; nums.length; i++) {
+            for (int j = i + 1; j &lt; nums.length; j++) {
+                if (nums[j] == target - nums[i]) {
+                    return new int[] { i, j };
+                }
             }
         }
+        throw new IllegalArgumentException(&quot;No two sum solution&quot;);
     }
-    throw new IllegalArgumentException(&quot;No two sum solution&quot;);
-}
 </code></pre>
 <p>#C++标答</p>
 
