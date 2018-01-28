@@ -90,14 +90,14 @@
 <meta name="description" content="网址">
 <meta name="keywords" content="code,leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2018/01/27/leetcode1/index.html">
+<meta property="og:title" content="3. Longest Substring Without Repeating Characters">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/leetcode3/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
 <meta property="og:description" content="网址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-28T06:26:27.966Z">
+<meta property="og:updated_time" content="2018-01-28T06:47:06.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1. Two Sum">
+<meta name="twitter:title" content="3. Longest Substring Without Repeating Characters">
 <meta name="twitter:description" content="网址">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/27/leetcode1/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/28/leetcode3/"/>
 
 
 
 
 
-  <title> 1. Two Sum | Hanmeimei's blog </title>
+  <title> 3. Longest Substring Without Repeating Characters | Hanmeimei's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/27/leetcode1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/leetcode3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩梅梅">
@@ -282,7 +282,7 @@
             
             
               
-                1. Two Sum
+                3. Longest Substring Without Repeating Characters
               
             
           </h1>
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T12:34:14+08:00">
-                2018-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T14:17:33+08:00">
+                2018-01-28
               </time>
             
 
@@ -356,28 +356,20 @@
 
       
         <ul>
-<li><a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
+<li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
 </ul>
 <hr>
-<h1 id="Java标答"><a href="#Java标答" class="headerlink" title="Java标答"></a>Java标答</h1><h2 id="brute-force"><a href="#brute-force" class="headerlink" title="brute force"></a>brute force</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, j &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Java标答"><a href="#Java标答" class="headerlink" title="Java标答"></a>Java标答</h1><h2 id="brute-force-TLE"><a href="#brute-force-TLE" class="headerlink" title="brute force(TLE)"></a>brute force(TLE)</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                <span class="keyword">if</span> (allUnique(s, i, j)) ans = Math.max(ans, j - i);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">allUnique</span><span class="params">(String s, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">            Character ch = s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (set.contains(ch)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            set.add(ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>直接 <code>return new int[] { i, j };</code>无需存储变量</li>
-<li><code>throw new IllegalArgumentException(&quot;No two sum solution&quot;);</code>非法的数据异常</li>
+<li><a href="http://blog.csdn.net/qq_33642117/article/details/52040345" target="_blank" rel="noopener">set详解</a></li>
+<li>时间复杂度 O(n^3)</li>
 </ul>
-<h2 id="hash-table"><a href="#hash-table" class="headerlink" title="hash table"></a>hash table</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="sliding-window"><a href="#sliding-window" class="headerlink" title="sliding window"></a>sliding window</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</span><br><span class="line">            <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">            <span class="keyword">if</span> (!set.contains(s.charAt(j)))&#123;</span><br><span class="line">                set.add(s.charAt(j++));</span><br><span class="line">                ans = Math.max(ans, j - i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                set.remove(s.charAt(i++));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>hash table (key,value)<ul>
-<li><code>map.put(key,value)</code></li>
-<li><code>map.containKey(key)</code></li>
-<li><code>map.get(key)</code>-&gt;对应的value</li>
+<li>时间复杂度 O(n)</li>
 </ul>
-</li>
-</ul>
-<h2 id="hash-table优化"><a href="#hash-table优化" class="headerlink" title="hash table优化"></a>hash table优化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>onenote C+做法 有补充</li>
-</ul>
-
+<h2 id="sliding-window-optimized"><a href="#sliding-window-optimized" class="headerlink" title="sliding window optimized"></a>sliding window optimized</h2><h3 id="Using-HashMap"><a href="#Using-HashMap" class="headerlink" title="Using HashMap"></a>Using HashMap</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length(), ans = <span class="number">0</span>;</span><br><span class="line">        Map&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(); <span class="comment">// current index of character</span></span><br><span class="line">        <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map.containsKey(s.charAt(j))) &#123;</span><br><span class="line">                i = Math.max(map.get(s.charAt(j)), i);</span><br><span class="line">            &#125;</span><br><span class="line">            ans = Math.max(ans, j - i + <span class="number">1</span>);</span><br><span class="line">            map.put(s.charAt(j), j + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Assuming-ASCII-128"><a href="#Assuming-ASCII-128" class="headerlink" title="Assuming ASCII 128"></a>Assuming ASCII 128</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length(), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] index = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">128</span>]; <span class="comment">// current index of character</span></span><br><span class="line">        <span class="comment">// try to extend the range [i, j]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, i = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            i = Math.max(index[s.charAt(j)], i);</span><br><span class="line">            ans = Math.max(ans, j - i + <span class="number">1</span>);</span><br><span class="line">            index[s.charAt(j)] = j + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -415,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/26/listary/" rel="next" title="Listary——GET THIS TOOL!">
-                <i class="fa fa-chevron-left"></i> Listary——GET THIS TOOL!
+              <a href="/2018/01/27/leetcode2/" rel="next" title="2. Add Two Numbers">
+                <i class="fa fa-chevron-left"></i> 2. Add Two Numbers
               </a>
             
           </div>
@@ -424,10 +416,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/27/leetcode2/" rel="prev" title="2. Add Two Numbers">
-                2. Add Two Numbers <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java标答"><span class="nav-number">1.</span> <span class="nav-text">Java标答</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#brute-force"><span class="nav-number">1.1.</span> <span class="nav-text">brute force</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash-table"><span class="nav-number">1.2.</span> <span class="nav-text">hash table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash-table优化"><span class="nav-number">1.3.</span> <span class="nav-text">hash table优化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java标答"><span class="nav-number">1.</span> <span class="nav-text">Java标答</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#brute-force-TLE"><span class="nav-number">1.1.</span> <span class="nav-text">brute force(TLE)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sliding-window"><span class="nav-number">1.2.</span> <span class="nav-text">sliding window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sliding-window-optimized"><span class="nav-number">1.3.</span> <span class="nav-text">sliding window optimized</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-HashMap"><span class="nav-number">1.3.1.</span> <span class="nav-text">Using HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Assuming-ASCII-128"><span class="nav-number">1.3.2.</span> <span class="nav-text">Assuming ASCII 128</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
