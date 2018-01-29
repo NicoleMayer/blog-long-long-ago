@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
 <meta property="og:description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-29T14:57:44.039Z">
+<meta property="og:updated_time" content="2018-01-29T15:01:22.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ primer学习笔记(一)">
 <meta name="twitter:description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案">
@@ -357,32 +357,52 @@
       
         <p>开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。<br>github上本书的<a href="https://github.com/pezy/CppPrimer" target="_blank" rel="noopener">习题答案</a>  <a id="more"></a></p>
 <hr>
-<h1 id="Chapter-1-Getting-Started"><a href="#Chapter-1-Getting-Started" class="headerlink" title="Chapter 1. Getting Started"></a>Chapter 1. Getting Started</h1><h2 id="built-in-type"><a href="#built-in-type" class="headerlink" title="built-in type :"></a><strong>built-in type</strong> :</h2><pre><code>*  type the language defines
-</code></pre><h2 id="return"><a href="#return" class="headerlink" title="return:"></a><strong>return</strong>:</h2><pre><code>* 有时候 `return` 的值是 a status indicator 
-* A *nonzero* return has a meaning that is defined by the **system**.
-* 通常 *nonzero* 表示 some kind of error
-</code></pre><h2 id="IO-iostream-library"><a href="#IO-iostream-library" class="headerlink" title="IO iostream library:"></a><strong>IO iostream library</strong>:</h2><pre><code>* **istream** / **ostream**
-* Four **IO objects**：
-    * `cin` (standard input)
-    * `cout`(standard output)
-    * `cerr`(standard error)
-    * `clog`(general information about the execution of the program)
-</code></pre><h2 id="A-example"><a href="#A-example" class="headerlink" title="A example"></a><strong>A example</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="endl-manipulator"><a href="#endl-manipulator" class="headerlink" title="endl (manipulator)"></a><strong>endl</strong> (manipulator)</h2><pre><code>* ending the current line
-* flushing the buffer associated with that device.
-</code></pre><h2 id="作者在多行注释时，通常每行都有个星号"><a href="#作者在多行注释时，通常每行都有个星号" class="headerlink" title="作者在多行注释时，通常每行都有个星号"></a>作者在多行注释时，通常每行都有个<strong>星号</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Simple main function:</span></span><br><span class="line"><span class="comment">* Read two numbers and write their sum</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// prompt user to enter two numbers</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;<span class="comment">// variables to hold the input we read</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2; <span class="comment">// read input</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="for-statement"><a href="#for-statement" class="headerlink" title="for statement"></a><strong><code>for</code> statement</strong></h2><pre><code>- an init-statement (executed only once)
-- a condition (tested each time through the loop)
-    - 条件满足-&gt;执行`for`body
-- an expression(在执行`for`body之后执行)
-</code></pre><h2 id="unknow-number-of-input"><a href="#unknow-number-of-input" class="headerlink" title="unknow number of input"></a><strong>unknow number of input</strong></h2><pre><code>- `while (std::cin &gt;&gt; value)`
-</code></pre><h2 id="common-errors-compiler-will-detect"><a href="#common-errors-compiler-will-detect" class="headerlink" title="common errors compiler will detect"></a><strong>common errors compiler will detect</strong></h2><pre><code>- Syntax errors
-- Type errors
-- Declaration errors
-</code></pre><h2 id="File-Redirection"><a href="#File-Redirection" class="headerlink" title="File Redirection"></a>File Redirection</h2><pre><code>- `$ addItems &lt;infile &gt;outfile`
-- read transactions from a file named `infile`
-- write its output to a file named `outfile` in the current directory
-</code></pre>
+<h1 id="Chapter-1-Getting-Started"><a href="#Chapter-1-Getting-Started" class="headerlink" title="Chapter 1. Getting Started"></a>Chapter 1. Getting Started</h1><h2 id="built-in-type"><a href="#built-in-type" class="headerlink" title="built-in type"></a><strong>built-in type</strong></h2><ul>
+<li>type the language defines</li>
+</ul>
+<h2 id="return"><a href="#return" class="headerlink" title="return"></a><strong>return</strong></h2><ul>
+<li>有时候 <code>return</code> 的值是 a status indicator </li>
+<li>A <em>nonzero</em> return has a meaning that is defined by the <strong>system</strong>.</li>
+<li>通常 <em>nonzero</em> 表示 some kind of error</li>
+</ul>
+<h2 id="IO-iostream-library"><a href="#IO-iostream-library" class="headerlink" title="IO iostream library"></a><strong>IO iostream library</strong></h2><ul>
+<li><strong>istream</strong> / <strong>ostream</strong></li>
+<li>Four <strong>IO objects</strong>：<ul>
+<li><code>cin</code> (standard input)</li>
+<li><code>cout</code>(standard output)</li>
+<li><code>cerr</code>(standard error)</li>
+<li><code>clog</code>(general information about the execution of the program)</li>
+</ul>
+</li>
+</ul>
+<h2 id="A-example"><a href="#A-example" class="headerlink" title="A example"></a><strong>A example</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="endl-manipulator"><a href="#endl-manipulator" class="headerlink" title="endl (manipulator)"></a><strong>endl</strong> (manipulator)</h2><ul>
+<li>ending the current line</li>
+<li>flushing the buffer associated with that device.</li>
+</ul>
+<h2 id="作者在多行注释时，通常每行都有个星号"><a href="#作者在多行注释时，通常每行都有个星号" class="headerlink" title="作者在多行注释时，通常每行都有个星号"></a>作者在多行注释时，通常每行都有个<strong>星号</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Simple main function:</span></span><br><span class="line"><span class="comment">* Read two numbers and write their sum</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// prompt user to enter two numbers</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;<span class="comment">// variables to hold the input we read</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2; <span class="comment">// read input</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="for-statement"><a href="#for-statement" class="headerlink" title="for statement"></a><strong><code>for</code> statement</strong></h2><ul>
+<li>an init-statement (executed only once)</li>
+<li>a condition (tested each time through the loop)<ul>
+<li>条件满足-&gt;执行<code>for</code>body</li>
+</ul>
+</li>
+<li>an expression(在执行<code>for</code>body之后执行)</li>
+</ul>
+<h2 id="unknow-number-of-input"><a href="#unknow-number-of-input" class="headerlink" title="unknow number of input"></a><strong>unknow number of input</strong></h2><ul>
+<li><code>while (std::cin &gt;&gt; value)</code></li>
+</ul>
+<h2 id="common-errors-compiler-will-detect"><a href="#common-errors-compiler-will-detect" class="headerlink" title="common errors compiler will detect"></a><strong>common errors compiler will detect</strong></h2><ul>
+<li>Syntax errors</li>
+<li>Type errors</li>
+<li>Declaration errors</li>
+</ul>
+<h2 id="File-Redirection"><a href="#File-Redirection" class="headerlink" title="File Redirection"></a>File Redirection</h2><ul>
+<li><code>$ addItems &lt;infile &gt;outfile</code></li>
+<li>read transactions from a file named <code>infile</code></li>
+<li>write its output to a file named <code>outfile</code> in the current directory</li>
+</ul>
+
       
     </div>
 
@@ -593,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-1-Getting-Started"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1. Getting Started</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#built-in-type"><span class="nav-number">1.1.</span> <span class="nav-text">built-in type :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return"><span class="nav-number">1.2.</span> <span class="nav-text">return:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO-iostream-library"><span class="nav-number">1.3.</span> <span class="nav-text">IO iostream library:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-example"><span class="nav-number">1.4.</span> <span class="nav-text">A example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#endl-manipulator"><span class="nav-number">1.5.</span> <span class="nav-text">endl (manipulator)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者在多行注释时，通常每行都有个星号"><span class="nav-number">1.6.</span> <span class="nav-text">作者在多行注释时，通常每行都有个星号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-statement"><span class="nav-number">1.7.</span> <span class="nav-text">for statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unknow-number-of-input"><span class="nav-number">1.8.</span> <span class="nav-text">unknow number of input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#common-errors-compiler-will-detect"><span class="nav-number">1.9.</span> <span class="nav-text">common errors compiler will detect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-Redirection"><span class="nav-number">1.10.</span> <span class="nav-text">File Redirection</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-1-Getting-Started"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1. Getting Started</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#built-in-type"><span class="nav-number">1.1.</span> <span class="nav-text">built-in type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return"><span class="nav-number">1.2.</span> <span class="nav-text">return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO-iostream-library"><span class="nav-number">1.3.</span> <span class="nav-text">IO iostream library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-example"><span class="nav-number">1.4.</span> <span class="nav-text">A example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#endl-manipulator"><span class="nav-number">1.5.</span> <span class="nav-text">endl (manipulator)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者在多行注释时，通常每行都有个星号"><span class="nav-number">1.6.</span> <span class="nav-text">作者在多行注释时，通常每行都有个星号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-statement"><span class="nav-number">1.7.</span> <span class="nav-text">for statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unknow-number-of-input"><span class="nav-number">1.8.</span> <span class="nav-text">unknow number of input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#common-errors-compiler-will-detect"><span class="nav-number">1.9.</span> <span class="nav-text">common errors compiler will detect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-Redirection"><span class="nav-number">1.10.</span> <span class="nav-text">File Redirection</span></a></li></ol></li></ol></div>
             
 
           </div>
