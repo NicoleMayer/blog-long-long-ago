@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案  #Chapter 1. Getting Started  built-in type : type the language defines  return:   有时候 return 的值是 a status indicator  A nonzero return h">
+<meta name="description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案">
 <meta name="keywords" content="C++ primer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ primer学习笔记(一)">
 <meta property="og:url" content="http://yoursite.com/2018/01/29/C++primer_ch1/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
-<meta property="og:description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案  #Chapter 1. Getting Started  built-in type : type the language defines  return:   有时候 return 的值是 a status indicator  A nonzero return h">
+<meta property="og:description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-29T14:48:00.402Z">
+<meta property="og:updated_time" content="2018-01-29T14:51:33.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ primer学习笔记(一)">
-<meta name="twitter:description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案  #Chapter 1. Getting Started  built-in type : type the language defines  return:   有时候 return 的值是 a status indicator  A nonzero return h">
+<meta name="twitter:description" content="开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。github上本书的习题答案">
 
 
 
@@ -355,10 +355,9 @@
       
 
       
-        <p>开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。<br>github上本书的<a href="https://github.com/pezy/CppPrimer" target="_blank" rel="noopener">习题答案</a></p>
+        <p>开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。<br>github上本书的<a href="https://github.com/pezy/CppPrimer" target="_blank" rel="noopener">习题答案</a> <a id="more"></a></p>
 <hr>
-<p>#Chapter 1. Getting Started</p>
-<ol>
+<h1 id="Chapter-1-Getting-Started"><a href="#Chapter-1-Getting-Started" class="headerlink" title="Chapter 1. Getting Started"></a>Chapter 1. Getting Started</h1><ul>
 <li><p><strong>built-in type</strong> : type the language defines</p>
 </li>
 <li><p><strong>return</strong>: </p>
@@ -382,9 +381,9 @@
 </li>
 <li><p><strong>A example</strong></p>
 </li>
-</ol>
+</ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
+<ul>
 <li><p><strong>endl</strong> (manipulator) </p>
 <ul>
 <li>ending the current line</li>
@@ -393,9 +392,9 @@
 </li>
 <li><p>作者在多行注释时，通常每行都有个<strong>星号</strong></p>
 </li>
-</ol>
+</ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Simple main function:</span></span><br><span class="line"><span class="comment">* Read two numbers and write their sum</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// prompt user to enter two numbers</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;<span class="comment">// variables to hold the input we read</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2; <span class="comment">// read input</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
+<ul>
 <li><p><strong><code>for</code> statement</strong></p>
 <ul>
 <li>an init-statement (executed only once)</li>
@@ -408,21 +407,21 @@
 </li>
 <li><p><strong>unknow number of input</strong></p>
 </li>
-</ol>
+</ul>
 <ul>
 <li><code>while (std::cin &gt;&gt; value)</code></li>
 </ul>
-<ol>
+<ul>
 <li><strong>common errors compiler will detect</strong></li>
-</ol>
+</ul>
 <ul>
 <li>Syntax errors</li>
 <li>Type errors</li>
 <li>Declaration errors</li>
 </ul>
-<ol>
+<ul>
 <li>File Redirection</li>
-</ol>
+</ul>
 <ul>
 <li><code>$ addItems &lt;infile &gt;outfile</code></li>
 <li>read transactions from a file named <code>infile</code></li>
@@ -541,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -620,6 +628,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-1-Getting-Started"><span class="nav-number">1.</span> <span class="nav-text">Chapter 1. Getting Started</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
