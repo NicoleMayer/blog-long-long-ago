@@ -261,6 +261,195 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/C++primer_ch1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="韩梅梅">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hanmeimei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/01/29/C++primer_ch1/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T20:27:38+08:00">
+                2018-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>开始阅读 C++ Primer，全书共19章，分为3各部分，希望在寒假期间通读第一部分并完成笔记。<br>github上本书的<a href="https://github.com/pezy/CppPrimer" target="_blank" rel="noopener">习题答案</a></p>
+<p>#Chapter 1. Getting Started</p>
+<ol>
+<li><p><strong>built-in type</strong> : type the language defines</p>
+</li>
+<li><p><strong>return</strong>: </p>
+<ul>
+<li>有时候 <code>return</code> 的值是 a status indicator </li>
+<li>A <em>nonzero</em> return has a meaning that is defined by the <strong>system</strong>.</li>
+<li>通常 <em>nonzero</em> 表示 some kind of error</li>
+</ul>
+</li>
+<li><p><strong>IO iostream library</strong>: </p>
+<ul>
+<li><strong>istream</strong> / <strong>ostream</strong></li>
+<li>Four <strong>IO objects</strong>：<ul>
+<li><code>cin</code> (standard input)</li>
+<li><code>cout</code>(standard output)</li>
+<li><code>cerr</code>(standard error)</li>
+<li><code>clog</code>(general information about the execution of the program)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>A example</strong></p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>endl</strong> (manipulator) </p>
+<ul>
+<li>ending the current line</li>
+<li>flushing the buffer associated with that device.</li>
+</ul>
+</li>
+<li><p>作者在多行注释时，通常每行都有个<strong>星号</strong></p>
+</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* Simple main function:</span></span><br><span class="line"><span class="comment">* Read two numbers and write their sum</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// prompt user to enter two numbers</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter two numbers:"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">int</span> v1 = <span class="number">0</span>, v2 = <span class="number">0</span>;<span class="comment">// variables to hold the input we read</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; v1 &gt;&gt; v2; <span class="comment">// read input</span></span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The sum of "</span> &lt;&lt; v1 &lt;&lt; <span class="string">" and "</span> &lt;&lt; v2&lt;&lt; <span class="string">" is "</span> &lt;&lt; v1 + v2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><strong><code>for</code> statement</strong></p>
+<ul>
+<li>an init-statement (executed only once)</li>
+<li>a condition (tested each time through the loop)<ul>
+<li>条件满足-&gt;执行<code>for</code>body</li>
+</ul>
+</li>
+<li>an expression(在执行<code>for</code>body之后执行)</li>
+</ul>
+</li>
+<li><p><strong>unknow number of input</strong></p>
+</li>
+</ol>
+<ul>
+<li><code>while (std::cin &gt;&gt; value)</code></li>
+</ul>
+<ol>
+<li><strong>common errors compiler will detect</strong></li>
+</ol>
+<ul>
+<li>Syntax errors</li>
+<li>Type errors</li>
+<li>Declaration errors</li>
+</ul>
+<ol>
+<li>File Redirection</li>
+</ol>
+<ul>
+<li><code>$ addItems &lt;infile &gt;outfile</code></li>
+<li>read transactions from a file named <code>infile</code></li>
+<li>write its output to a file named <code>outfile</code> in the current directory</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/leetcode5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1432,7 +1621,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
