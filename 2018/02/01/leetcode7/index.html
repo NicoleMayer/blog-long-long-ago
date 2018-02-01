@@ -90,14 +90,14 @@
 <meta name="description" content="网址">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2018/01/27/leetcode2/index.html">
+<meta property="og:title" content="7. Reverse Integer">
+<meta property="og:url" content="http://yoursite.com/2018/02/01/leetcode7/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
 <meta property="og:description" content="网址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-29T08:32:54.475Z">
+<meta property="og:updated_time" content="2018-02-01T06:43:48.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. Add Two Numbers">
+<meta name="twitter:title" content="7. Reverse Integer">
 <meta name="twitter:description" content="网址">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/27/leetcode2/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/01/leetcode7/"/>
 
 
 
 
 
-  <title> 2. Add Two Numbers | Hanmeimei's blog </title>
+  <title> 7. Reverse Integer | Hanmeimei's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/27/leetcode2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/01/leetcode7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩梅梅">
@@ -282,7 +282,7 @@
             
             
               
-                2. Add Two Numbers
+                7. Reverse Integer
               
             
           </h1>
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T14:27:33+08:00">
-                2018-01-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T14:10:14+08:00">
+                2018-02-01
               </time>
             
 
@@ -356,14 +356,22 @@
 
       
         <ul>
-<li><a href="https://leetcode.com/problems/add-two-numbers/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
+<li><a href="https://leetcode.com/problems/reverse-integer/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
 </ul>
 <hr>
-<h1 id="my-answer"><a href="#my-answer" class="headerlink" title="my answer"></a>my answer</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode res=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode tmp=res;</span><br><span class="line">        <span class="keyword">int</span> add=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="keyword">null</span> || l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> x=(l1==<span class="keyword">null</span>)?<span class="number">0</span>:l1.val;</span><br><span class="line">            <span class="keyword">int</span> y=(l2==<span class="keyword">null</span>)?<span class="number">0</span>:l2.val;</span><br><span class="line">            tmp.next=<span class="keyword">new</span> ListNode((x+y+add)%<span class="number">10</span>);</span><br><span class="line">            add=(x+y+add)/<span class="number">10</span>;</span><br><span class="line">            tmp=tmp.next;</span><br><span class="line">            <span class="keyword">if</span>(l1==<span class="keyword">null</span>)&#123;</span><br><span class="line">                l2=l2.next;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(l2==<span class="keyword">null</span>)&#123;</span><br><span class="line">                l1=l1.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l1=l1.next;</span><br><span class="line">                l2=l2.next;</span><br><span class="line">            &#125; </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(add==<span class="number">1</span>)&#123;</span><br><span class="line">            tmp.next=<span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">addTwoNumbers</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="function">ListNode <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">        ListNode *tmp=&amp;res;</span><br><span class="line">        <span class="keyword">int</span> add=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 || l2)&#123;</span><br><span class="line">            <span class="keyword">int</span> x=(l1)?l1-&gt;val:<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> y=(l2)?l2-&gt;val:<span class="number">0</span>;</span><br><span class="line">            tmp-&gt;next=<span class="keyword">new</span> ListNode((x+y+add)%<span class="number">10</span>);</span><br><span class="line">            add=(x+y+add)/<span class="number">10</span>;</span><br><span class="line">            tmp=tmp-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(!l1)&#123;</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(!l2)&#123;</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">            &#125; </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(add==<span class="number">1</span>)&#123;</span><br><span class="line">            tmp-&gt;next=<span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="渣渣的wo"><a href="#渣渣的wo" class="headerlink" title="渣渣的wo"></a>渣渣的wo</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        String s=Integer.toString(x);</span><br><span class="line">        StringBuffer sb=<span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=s.length()-<span class="number">1</span>;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">                sb.append(s.charAt(i));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=s.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">                sb.append(s.charAt(i));</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">long</span> res=Long.parseLong(sb.toString());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>((x&lt;<span class="number">0</span>&amp;&amp;res-<span class="number">1</span>&gt;<span class="number">2147483647</span>)||(x&gt;=<span class="number">0</span>&amp;&amp;res&gt;<span class="number">2147483647</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(x&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> (<span class="keyword">int</span>)(-res);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (<span class="keyword">int</span>)res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Java改C++ 删去所用null</li>
-<li>熟练使用指针</li>
+<li>int转String <code>Integer.toString(int)</code></li>
+<li>String转long <code>Long.parseLong(String)</code></li>
+<li>我写的太复杂了 还用String转来转去的 😓</li>
+</ul>
+<h1 id="Others’-code"><a href="#Others’-code" class="headerlink" title="Others’ code"></a>Others’ code</h1><h2 id="一般思路"><a href="#一般思路" class="headerlink" title="一般思路"></a>一般思路</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># by *ardyadipta*</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> result =<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result = result * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span>(result &gt; Integer.MAX_VALUE) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(result &lt; Integer.MIN_VALUE) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)result;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Integer.MAX_VALUE</code> <code>Integer.MIN_VALUE</code> 学会用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># by *bitzhuwei*</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (x != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tail = x % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">int</span> newResult = result * <span class="number">10</span> + tail;</span><br><span class="line">        <span class="keyword">if</span> ((newResult - tail) / <span class="number">10</span> != result)</span><br><span class="line">        &#123; <span class="keyword">return</span> <span class="number">0</span>; &#125;</span><br><span class="line">        result = newResult;</span><br><span class="line">        x = x / <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更加巧妙</li>
 </ul>
 
       
@@ -401,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/27/leetcode1/" rel="next" title="1. Two Sum">
-                <i class="fa fa-chevron-left"></i> 1. Two Sum
+              <a href="/2018/01/30/leetcode6/" rel="next" title="6. ZigZag Conversion">
+                <i class="fa fa-chevron-left"></i> 6. ZigZag Conversion
               </a>
             
           </div>
@@ -410,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/28/leetcode3/" rel="prev" title="3. Longest Substring Without Repeating Characters">
-                3. Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#my-answer"><span class="nav-number">1.</span> <span class="nav-text">my answer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.1.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">1.2.</span> <span class="nav-text">C++</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#渣渣的wo"><span class="nav-number">1.</span> <span class="nav-text">渣渣的wo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Others’-code"><span class="nav-number">2.</span> <span class="nav-text">Others’ code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一般思路"><span class="nav-number">2.1.</span> <span class="nav-text">一般思路</span></a></li></ol></li></ol></div>
             
 
           </div>
