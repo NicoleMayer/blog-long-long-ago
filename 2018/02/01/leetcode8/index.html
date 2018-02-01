@@ -90,14 +90,14 @@
 <meta name="description" content="网址">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5. Longest Palindromic Substring">
-<meta property="og:url" content="http://yoursite.com/2018/01/29/leetcode5/index.html">
+<meta property="og:title" content="8. String to Integer (atoi)">
+<meta property="og:url" content="http://yoursite.com/2018/02/01/leetcode8/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
 <meta property="og:description" content="网址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-29T12:19:50.562Z">
+<meta property="og:updated_time" content="2018-02-01T08:39:39.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5. Longest Palindromic Substring">
+<meta name="twitter:title" content="8. String to Integer (atoi)">
 <meta name="twitter:description" content="网址">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/29/leetcode5/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/01/leetcode8/"/>
 
 
 
 
 
-  <title> 5. Longest Palindromic Substring | Hanmeimei's blog </title>
+  <title> 8. String to Integer (atoi) | Hanmeimei's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/leetcode5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/01/leetcode8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩梅梅">
@@ -282,7 +282,7 @@
             
             
               
-                5. Longest Palindromic Substring
+                8. String to Integer (atoi)
               
             
           </h1>
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-29T17:21:29+08:00">
-                2018-01-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T16:31:34+08:00">
+                2018-02-01
               </time>
             
 
@@ -356,21 +356,21 @@
 
       
         <ul>
-<li><a href="https://leetcode.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
+<li><a href="https://leetcode.com/problems/string-to-integer-atoi/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
 </ul>
 <hr>
-<h1 id="my-answers"><a href="#my-answers" class="headerlink" title="my answers"></a>my answers</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> start=<span class="number">0</span>,end=<span class="number">0</span>,res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            res=Math.max(largestLength(s,i,i),largestLength(s,i,i+<span class="number">1</span>));</span><br><span class="line">            <span class="keyword">if</span>(res&gt;=end-start+<span class="number">1</span>)&#123;</span><br><span class="line">                start=i-(res-<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">                end=i+res/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(start,end);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">largestLength</span><span class="params">(String s,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(start&gt;=<span class="number">0</span> &amp;&amp; end&lt;s.length() &amp;&amp; s.charAt(start)==s.charAt(end))&#123;</span><br><span class="line">            start--;</span><br><span class="line">            end++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (end-start-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="标答"><a href="#标答" class="headerlink" title="标答"></a>标答</h1><h2 id="Longest-Common-Substring"><a href="#Longest-Common-Substring" class="headerlink" title="Longest Common Substring"></a>Longest Common Substring</h2><ul>
-<li><strong>回文</strong>的特征就是reverse还是本身，但采用 <strong>这种做法</strong> (<a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem" target="_blank" rel="noopener">how?</a>) 在某些情况下会不正确</li>
-<li>例如<code>s=abcgfcba</code> <code>s&#39;=abcfgcba</code>，longest common subsring是abc/cba 但它们都不是回文</li>
-<li>所以每次找出来largest common substring后要 <strong>check</strong> 一下是否为回文。</li>
-<li><strong>how?</strong> [<em>数据结构quiz1最后一题</em>] 用 <strong>linked list</strong> 来做，建立两个指针一个每次只移动一位，另一个每次移动两位，建一个stack,每次push慢指针的data,慢指针移动到快指针移完为止；此时慢指针移动两位，再接着移动一位每次pop堆里面的元素</li>
+<h1 id="my-answers"><a href="#my-answers" class="headerlink" title="my answers"></a>my answers</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;<span class="comment">//计数</span></span><br><span class="line">        <span class="keyword">boolean</span> sign=<span class="keyword">true</span>;<span class="comment">//true为正数，false为负数</span></span><br><span class="line">        <span class="keyword">long</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//空字符串</span></span><br><span class="line">        <span class="keyword">if</span>(str.length()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//除去空格</span></span><br><span class="line">        <span class="keyword">while</span>(str.charAt(i)==<span class="string">' '</span>&amp;&amp;i&lt;str.length())&#123;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="comment">//只包含空格</span></span><br><span class="line">            <span class="keyword">if</span>(i==str.length())&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(str.charAt(i)==<span class="string">'-'</span>)&#123;<span class="comment">//负号</span></span><br><span class="line">            sign=<span class="keyword">false</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(str.charAt(i)==<span class="string">'+'</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//以符号结束或**符号后面非数字字符**</span></span><br><span class="line">        <span class="keyword">if</span>(i==str.length()||(str.charAt(i)&lt;<span class="string">'0'</span>||str.charAt(i)&gt;<span class="string">'9'</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(str.charAt(i)&gt;=<span class="string">'0'</span>&amp;&amp;str.charAt(i)&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> num=str.charAt(i)-<span class="string">'0'</span>;</span><br><span class="line">            res=res*<span class="number">10</span>+num;</span><br><span class="line">            <span class="keyword">if</span>(sign&amp;&amp;res&gt;Integer.MAX_VALUE)&#123;</span><br><span class="line">                <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(!sign&amp;&amp;(-res)&lt;Integer.MIN_VALUE)&#123;</span><br><span class="line">                <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">if</span>(i==str.length())&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (sign)?(<span class="keyword">int</span>)res:(<span class="keyword">int</span>)(-res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>反反复复提交了8遍 考虑的情况实在太多</li>
+<li>最开始用str转long做 但也有可能超出long的范围 有太多情况要考虑…</li>
 </ul>
-<h2 id="Manacher’s-Algorithm"><a href="#Manacher’s-Algorithm" class="headerlink" title="Manacher’s Algorithm"></a>Manacher’s Algorithm</h2><ul>
-<li><a href="https://articles.leetcode.com/longest-palindromic-substring-part-ii/" target="_blank" rel="noopener">详解</a></li>
-<li>挺有趣的算法，好像以前上机课讲过，当时应该只求长度。我自己用Java写了下</li>
+<h1 id="Other’s-code"><a href="#Other’s-code" class="headerlink" title="Other’s code"></a>Other’s code</h1><pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//by *lestrois*</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>, sign = <span class="number">1</span>, total = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//1. Empty string</span></span><br><span class="line">    <span class="keyword">if</span>(str.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2. Remove Spaces</span></span><br><span class="line">    <span class="keyword">while</span>(str.charAt(index) == <span class="string">' '</span> &amp;&amp; index &lt; str.length())</span><br><span class="line">        index ++;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3. Handle signs</span></span><br><span class="line">    <span class="keyword">if</span>(str.charAt(index) == <span class="string">'+'</span> || str.charAt(index) == <span class="string">'-'</span>)&#123;</span><br><span class="line">        sign = str.charAt(index) == <span class="string">'+'</span> ? <span class="number">1</span> : -<span class="number">1</span>;</span><br><span class="line">        index ++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//4. Convert number and avoid overflow</span></span><br><span class="line">    <span class="keyword">while</span>(index &lt; str.length())&#123;</span><br><span class="line">        <span class="keyword">int</span> digit = str.charAt(index) - <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">if</span>(digit &lt; <span class="number">0</span> || digit &gt; <span class="number">9</span>) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//check if total will be overflow after 10 times and add digit</span></span><br><span class="line">        <span class="keyword">if</span>(Integer.MAX_VALUE/<span class="number">10</span> &lt; total || Integer.MAX_VALUE/<span class="number">10</span> == total &amp;&amp; Integer.MAX_VALUE %<span class="number">10</span> &lt; digit)</span><br><span class="line">            <span class="keyword">return</span> sign == <span class="number">1</span> ? Integer.MAX_VALUE : Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">        total = <span class="number">10</span> * total + digit;</span><br><span class="line">        index ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> total * sign;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li>思路清晰 </li>
+<li>符号用乘sign来做看上去更好</li>
+<li>如果我把关于index&lt;length的判断放在最外面while循环，关于数字与否的判断用if,这样可以省略很多行</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        String newstr=newString(s);</span><br><span class="line">        <span class="keyword">int</span> n=newstr.length();</span><br><span class="line">        <span class="keyword">int</span>[] len=<span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span> mid=<span class="number">0</span>,range=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> mir=<span class="number">2</span>*mid-i;</span><br><span class="line">            len[i]=(range-i&gt;<span class="number">0</span>)?Math.min(range-i,len[mir]):<span class="number">0</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(newstr.charAt(i+<span class="number">1</span>+len[i])==newstr.charAt(i-<span class="number">1</span>-len[i]))&#123;</span><br><span class="line">                len[i]++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i+len[i]&gt;range)&#123;</span><br><span class="line">                mid=i;</span><br><span class="line">                range=i+len[i];</span><br><span class="line">            &#125;                    </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxindex=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(len[i]&gt;max)&#123;</span><br><span class="line">                max=len[i];</span><br><span class="line">                maxindex=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring((maxindex-<span class="number">1</span>-max)/<span class="number">2</span>,(maxindex-<span class="number">1</span>-max)/<span class="number">2</span>+max);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">newString</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=s.length();</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span> <span class="string">"^*"</span>;</span><br><span class="line">        String str=<span class="string">"^"</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            str+=<span class="string">"#"</span>+s.substring(i,i+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        str+=<span class="string">"#*"</span>;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -406,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/29/leetcode4/" rel="next" title="4. Median of Two Sorted Arrays">
-                <i class="fa fa-chevron-left"></i> 4. Median of Two Sorted Arrays
+              <a href="/2018/02/01/leetcode7/" rel="next" title="7. Reverse Integer">
+                <i class="fa fa-chevron-left"></i> 7. Reverse Integer
               </a>
             
           </div>
@@ -415,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/29/C++primer_ch1/" rel="prev" title="C++ primer学习笔记(一)">
-                C++ primer学习笔记(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -585,7 +581,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#my-answers"><span class="nav-number">1.</span> <span class="nav-text">my answers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标答"><span class="nav-number">2.</span> <span class="nav-text">标答</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Longest-Common-Substring"><span class="nav-number">2.1.</span> <span class="nav-text">Longest Common Substring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manacher’s-Algorithm"><span class="nav-number">2.2.</span> <span class="nav-text">Manacher’s Algorithm</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#my-answers"><span class="nav-number">1.</span> <span class="nav-text">my answers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other’s-code"><span class="nav-number">2.</span> <span class="nav-text">Other’s code</span></a></li></ol></div>
             
 
           </div>
