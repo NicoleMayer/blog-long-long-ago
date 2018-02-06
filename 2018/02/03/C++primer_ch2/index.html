@@ -97,7 +97,11 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/02/03/5a75bb1bb51e2.png">
 <meta property="og:image" content="https://i.loli.net/2018/02/03/5a75cb132916f.png">
-<meta property="og:updated_time" content="2018-02-03T14:48:48.924Z">
+<meta property="og:image" content="https://i.loli.net/2018/02/04/5a7708d16ab90.png">
+<meta property="og:image" content="https://i.loli.net/2018/02/04/5a7709bd52a92.png">
+<meta property="og:image" content="https://i.loli.net/2018/02/04/5a770bb0bd70b.png">
+<meta property="og:image" content="https://i.loli.net/2018/02/04/5a771052c3f2f.png">
+<meta property="og:updated_time" content="2018-02-04T14:26:15.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ primer学习笔记(二)">
 <meta name="twitter:description" content="距离上一次看这本书好像过了很久欸，要加油哦💪">
@@ -393,17 +397,50 @@
 </ul>
 <h3 id="Literals"><a href="#Literals" class="headerlink" title="Literals"></a>Literals</h3><ul>
 <li><strong>literal</strong> : the value self-evident<ul>
+<li><strong>integer literals</strong> / <strong>Floating-point literals</strong></li>
 <li>20 /<em> decimal </em>/ </li>
 <li>024 /<em> octal </em>/ </li>
 <li>0x14 /<em> hexadecimal </em>/</li>
+<li>3.14159 3.14159E0 0. 0e0 .001</li>
 </ul>
 </li>
 </ul>
 <p><img src="https://i.loli.net/2018/02/03/5a75cb132916f.png" alt="literal"></p>
 <ul>
-<li>If we write what appears to be a negative decimal literal, for example, -42, the minus sign is not <strong>part</strong> of the literal. The minus sign is an operator that <strong>negates</strong> the value of its (literal) operand.</li>
+<li><p>If we write what appears to be a negative decimal literal, for example, -42, the minus sign is not <strong>part</strong> of the literal. The minus sign is an operator that <strong>negates</strong> the value of its (literal) operand.</p>
+</li>
+<li><p>Escape Sequences</p>
+</li>
 </ul>
-<p>P69</p>
+<p><img src="https://i.loli.net/2018/02/04/5a7708d16ab90.png" alt="escape sequences"></p>
+<p><img src="https://i.loli.net/2018/02/04/5a7709bd52a92.png" alt="escape sequences"></p>
+<ul>
+<li>For example, <code>\1234</code> represents two characters: the character represented by the octal value 123 and the character 4</li>
+<li><p>In contrast, <code>\x</code> uses up all the hex digits following it; <code>\x1234</code> represents a single, 16-bit character composed from the bits corresponding to these four hexadecimal digits.<br>Such values are unlikely to be useful.(理解就好)</p>
+</li>
+<li><p>override the default type of an integer, floating- point, or character literal by<br>supplying a suffix or prefix</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2018/02/04/5a770bb0bd70b.png" alt="format"></p>
+<p><strong>Exercise 有很好的练习</strong></p>
+<ul>
+<li>a literal with a suffix of UL will be<br>either unsigned long or unsigned long long, depending on whether its value fits in unsigned long </li>
+<li>advice from author: When you write a long literal, use the uppercase <strong>L</strong>; the lowercase letter <strong>l</strong> is too easily mistaken for the digit <strong>1</strong></li>
+</ul>
+<h2 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h2><p><img src="https://i.loli.net/2018/02/04/5a771052c3f2f.png" alt="definition"></p>
+<ul>
+<li><strong>Initialization</strong> happens when a variable is given a value when it is created. <strong>Assignment</strong> obliterates an object’s current value and replaces that value with a new one.</li>
+</ul>
+<h3 id="List-Initialization"><a href="#List-Initialization" class="headerlink" title="List Initialization"></a>List Initialization</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> units_sold = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> units_sold = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> units_sold&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">units_sold</span><span class="params">(<span class="number">0</span>)</span></span>; <span class="comment">//generalized used</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The compiler will not let us list initialize variables of built-in type if the initializer might lead to the <strong>loss of information</strong></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">double</span> ld = <span class="number">3.1415926536</span>;</span><br><span class="line"><span class="keyword">int</span> a&#123;ld&#125;, b = &#123;ld&#125;; <span class="comment">// error: narrowing conversion required</span></span><br><span class="line">int c(ld), d = ld; // ok: but value will be truncated</span><br></pre></td></tr></table></figure>
+<h3 id="Default-Initialization"><a href="#Default-Initialization" class="headerlink" title="Default Initialization"></a>Default Initialization</h3><ul>
+<li><strong>Variables</strong> defined <em>outside</em> any function body are initialized to <strong>zero</strong> / <strong>Variables</strong> of built-in type defined <em>inside</em> a function are <strong>uninitialized</strong></li>
+<li>The value of an <strong>uninitialized</strong> variable of<br>built-in type is <strong>undefined</strong></li>
+</ul>
+<h2 id="Compound-Types"><a href="#Compound-Types" class="headerlink" title="Compound Types"></a>Compound Types</h2><h2 id="const-Qualifier"><a href="#const-Qualifier" class="headerlink" title="const Qualifier"></a>const Qualifier</h2><h2 id="Dealing-with-Types"><a href="#Dealing-with-Types" class="headerlink" title="Dealing with Types"></a>Dealing with Types</h2><h2 id="Defining-Our-Own-Data-Structures"><a href="#Defining-Our-Own-Data-Structures" class="headerlink" title="Defining Our Own Data Structures"></a>Defining Our Own Data Structures</h2><p>P76</p>
 
       
     </div>
@@ -619,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-2-Variables-and-Basic-Types"><span class="nav-number">1.</span> <span class="nav-text">Chapter 2. Variables and Basic Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#statically-typed-language"><span class="nav-number">1.1.</span> <span class="nav-text">statically typed language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Built-in-Types"><span class="nav-number">1.2.</span> <span class="nav-text">Primitive Built-in Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arithmetic-Types"><span class="nav-number">1.2.1.</span> <span class="nav-text">Arithmetic Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#void"><span class="nav-number">1.2.2.</span> <span class="nav-text">void</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Conversions"><span class="nav-number">1.2.3.</span> <span class="nav-text">Type Conversions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Literals"><span class="nav-number">1.2.4.</span> <span class="nav-text">Literals</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-2-Variables-and-Basic-Types"><span class="nav-number">1.</span> <span class="nav-text">Chapter 2. Variables and Basic Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#statically-typed-language"><span class="nav-number">1.1.</span> <span class="nav-text">statically typed language</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Built-in-Types"><span class="nav-number">1.2.</span> <span class="nav-text">Primitive Built-in Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arithmetic-Types"><span class="nav-number">1.2.1.</span> <span class="nav-text">Arithmetic Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#void"><span class="nav-number">1.2.2.</span> <span class="nav-text">void</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Conversions"><span class="nav-number">1.2.3.</span> <span class="nav-text">Type Conversions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Literals"><span class="nav-number">1.2.4.</span> <span class="nav-text">Literals</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variables"><span class="nav-number">1.3.</span> <span class="nav-text">Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-Initialization"><span class="nav-number">1.3.1.</span> <span class="nav-text">List Initialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Default-Initialization"><span class="nav-number">1.3.2.</span> <span class="nav-text">Default Initialization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compound-Types"><span class="nav-number">1.4.</span> <span class="nav-text">Compound Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const-Qualifier"><span class="nav-number">1.5.</span> <span class="nav-text">const Qualifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealing-with-Types"><span class="nav-number">1.6.</span> <span class="nav-text">Dealing with Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Defining-Our-Own-Data-Structures"><span class="nav-number">1.7.</span> <span class="nav-text">Defining Our Own Data Structures</span></a></li></ol></li></ol></div>
             
 
           </div>
