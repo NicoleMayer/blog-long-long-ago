@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="leetcode," />
+  <meta name="keywords" content="理财," />
 
 
 
@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="网址">
-<meta name="keywords" content="leetcode">
+<meta name="description" content="莉巾很久之前推我的书。自从上了大学就开始有真正独立的生活费了，经常出去吃饭淘宝什么的也没有节制，是时候好好学习下理财经验 喵喵喵😁">
+<meta name="keywords" content="理财">
 <meta property="og:type" content="article">
-<meta property="og:title" content="12. Integer to Roman">
-<meta property="og:url" content="http://yoursite.com/2018/02/05/leetcode12/index.html">
+<meta property="og:title" content="小狗钱钱读书笔记">
+<meta property="og:url" content="http://yoursite.com/2018/02/04/小狗钱钱/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
-<meta property="og:description" content="网址">
+<meta property="og:description" content="莉巾很久之前推我的书。自从上了大学就开始有真正独立的生活费了，经常出去吃饭淘宝什么的也没有节制，是时候好好学习下理财经验 喵喵喵😁">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T12:31:26.425Z">
+<meta property="og:updated_time" content="2018-02-06T12:35:57.918Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="12. Integer to Roman">
-<meta name="twitter:description" content="网址">
+<meta name="twitter:title" content="小狗钱钱读书笔记">
+<meta name="twitter:description" content="莉巾很久之前推我的书。自从上了大学就开始有真正独立的生活费了，经常出去吃饭淘宝什么的也没有节制，是时候好好学习下理财经验 喵喵喵😁">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/05/leetcode12/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/04/小狗钱钱/"/>
 
 
 
 
 
-  <title> 12. Integer to Roman | Hanmeimei's blog </title>
+  <title> 小狗钱钱读书笔记 | Hanmeimei's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/05/leetcode12/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/小狗钱钱/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩梅梅">
@@ -282,7 +282,7 @@
             
             
               
-                12. Integer to Roman
+                小狗钱钱读书笔记
               
             
           </h1>
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-05T17:23:07+08:00">
-                2018-02-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T17:00:39+08:00">
+                2018-02-04
               </time>
             
 
@@ -320,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/code/" itemprop="url" rel="index">
-                    <span itemprop="name">code</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -355,14 +355,37 @@
       
 
       
-        <ul>
-<li><a href="https://leetcode.com/problems/integer-to-roman/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
-</ul>
+        <p>莉巾很久之前推我的书。自从上了大学就开始有真正独立的生活费了，经常出去吃饭淘宝什么的也没有节制，是时候好好学习下理财经验 喵喵喵😁  <a id="more"></a></p>
 <hr>
-<h1 id="my-answer"><a href="#my-answer" class="headerlink" title="my answer"></a>my answer</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">intToRoman</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] values=&#123;<span class="number">1000</span>,<span class="number">900</span>,<span class="number">500</span>,<span class="number">400</span>,<span class="number">100</span>,<span class="number">90</span>,<span class="number">50</span>,<span class="number">40</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        String[] roman=&#123;<span class="string">"M"</span>,<span class="string">"CM"</span>,<span class="string">"D"</span>,<span class="string">"CD"</span>,<span class="string">"C"</span>,<span class="string">"XC"</span>,<span class="string">"L"</span>,<span class="string">"XL"</span>,<span class="string">"X"</span>,<span class="string">"IX"</span>,<span class="string">"V"</span>,<span class="string">"IV"</span>,<span class="string">"I"</span>&#125;;</span><br><span class="line">        StringBuffer sb=<span class="keyword">new</span> StringBuffer();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;values.length;i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(num-values[i]&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">                num-=values[i];</span><br><span class="line">                sb.append(roman[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>最开始只用了5的倍数 后发现一个罗马数字不得超过3次，（一般由小到大加到第四个数不行）从大到小排列的顺序使得这些特殊数的优先级更高，思路还是很简单的</li>
-</ul>
+<blockquote>
+<p>我也不认为钱是人生命中最重要的东西。可是，假如我们缺钱的话，钱就会变得格外重要</p>
+<p>想出十个你想变得更富有的原因</p>
+<p>不是试试看，而是去行动！如果你只是带着<strong>试试</strong>看的心态，那么你最后只会以<strong>失败</strong>而告终，你会一事无成。<em>尝试纯粹是一种借口</em>，你还没有做，就已经给自己想好了退路。不能试验，你只有两个选择——<strong>做</strong>或者<strong>不做</strong></p>
+<p>我们的<strong>支出</strong>永远是随着我们的<strong>收入</strong>而<strong>增长</strong>的</p>
+<p>你的自信程度决定了你是否相信自己的能力，你是否相信你自己。假如你根本不相信你能做到的话，那么你就根本不会动手去做，而假如你不开始去做，那么你就什么也得不到</p>
+<p>一个人把精力集中在自己所能做的，知道的和拥有的东西上的那一天起，他的成功就已经拉开了序幕。这也使得一个孩子完全有能力比成人挣到更多的钱。</p>
+<p>你应该在自己遇到困难的时候，仍然坚持自己的意愿。当一切正常的时候，每个人都能做到这一点。可是当真正的困难出现的时候，才见了分晓。</p>
+<p>欠债的人应当毁掉所有的信用卡，因为大多数人在使用信用卡的时候，比用现金花的钱要多得多。</p>
+<p>应当尽可能少地偿还他们的贷款。分期付款额越高，他们每个月剩下的生活费就越少。</p>
+<p>消费贷款是与住房无关的贷款。假如人们为了购置新的汽车、家具、电视机或用于生活的贷款，就是消费贷款。这时候欠债的人应当遵守50％／50％的原则。他们应当将不用于生活的那部分钱中的一半存起来，而另一半用于还债。</p>
+<p>所有的消费贷款都是不明智的。聪明的做法是只支出以前积攒起来的财富。</p>
+<p>这真的有必要吗？</p>
+<p>有的时候疯狂的念头比普通的小目标更容易达到。当你定下大目标的时候，就意味着你必须付出比别人多得多的努力。</p>
+<p>一个人要想过更幸福、更满意的生活，就得对自身进行改变。这和钱无关，金钱本身既不会使人幸福也不会带来不幸。金钱是中性的，既不好，也不坏。只有当钱属于某一个人的时候，它才会对这个人产生好的或者坏的影响。然后，钱要么被用于好的用途，要么被用作坏的用途。一个幸福的人有了钱会更幸福；而一个悲观忧虑的人，钱越多，烦恼就越多。</p>
+<p>1.确定自己喜欢获得财务上的成功。</p>
+<p>2.自信，有想法，做自己喜欢做的事。</p>
+<p>3.把钱分成<strong>日常开销</strong>、<strong>梦想目标</strong>和<strong>金鹅账户</strong>三部分。</p>
+<p>4.进行明智的投资。</p>
+<p>5.享受生活。</p>
+<p>如果你没有做今天这件事情，你就永远不会知道，给自己一些压力之后，你能够做到些什么。一个人觉得最引以为自豪的事情，往往是那些做起来最艰难的事情。</p>
+<p>1 基金应该至少有十年历史。假如它在这么长时间内一直有丰厚的盈利，那我们可以认为，它在未来也会运作良好。</p>
+<p>2 应该选择大型的跨国股票基金。这种基金在世界各地购买股票，以此分散风险，所以十分安全。</p>
+<p>3 对基金的走势图进行比较，我们应该观察在过去10年间哪些基金的年终获利最好。</p>
+<p>直接用72除以你们投资的年收益率的百分比，得出的数字就是这笔钱翻一倍所要的年数。</p>
+<p>72公式也可以用来帮助我们计算通货膨胀。它可以告诉我们，在一定通货膨胀率下，我们的钱在多长时间后会贬值一半。按72除以3％的通货膨胀率计算，得到24，就是说24年以后，你的钱只值现在的一半。</p>
+<p>想象你拥有了你想要的东西后生活的变化，这种美好让心中有更强烈的欲望去实现愿望</p>
+<p>写‘成功日记’,记录所有做成功的事情 感觉我很有必要搞一搞😆</p>
+</blockquote>
 
       
     </div>
@@ -386,7 +409,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+            <a href="/tags/理财/" rel="tag"># 理财</a>
           
         </div>
       
@@ -399,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/04/小狗钱钱/" rel="next" title="小狗钱钱读书笔记">
-                <i class="fa fa-chevron-left"></i> 小狗钱钱读书笔记
+              <a href="/2018/02/04/leetcode10/" rel="next" title="10. Regular Expression Matching">
+                <i class="fa fa-chevron-left"></i> 10. Regular Expression Matching
               </a>
             
           </div>
@@ -409,8 +432,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/06/leetcode13/" rel="prev" title="13. Roman to Integer">
-                13. Roman to Integer <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/05/leetcode12/" rel="prev" title="12. Integer to Roman">
+                12. Integer to Roman <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -480,17 +503,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -568,22 +582,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#my-answer"><span class="nav-number">1.</span> <span class="nav-text">my answer</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
