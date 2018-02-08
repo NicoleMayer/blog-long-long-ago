@@ -90,14 +90,14 @@
 <meta name="description" content="网址">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="13. Roman to Integer">
-<meta property="og:url" content="http://yoursite.com/2018/02/06/leetcode13/index.html">
+<meta property="og:title" content="15. 3Sum">
+<meta property="og:url" content="http://yoursite.com/2018/02/08/leetcode15/index.html">
 <meta property="og:site_name" content="Hanmeimei&#39;s blog">
 <meta property="og:description" content="网址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-06T12:31:26.431Z">
+<meta property="og:updated_time" content="2018-02-08T06:59:02.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="13. Roman to Integer">
+<meta name="twitter:title" content="15. 3Sum">
 <meta name="twitter:description" content="网址">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/06/leetcode13/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/08/leetcode15/"/>
 
 
 
 
 
-  <title> 13. Roman to Integer | Hanmeimei's blog </title>
+  <title> 15. 3Sum | Hanmeimei's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/06/leetcode13/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/leetcode15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩梅梅">
@@ -282,7 +282,7 @@
             
             
               
-                13. Roman to Integer
+                15. 3Sum
               
             
           </h1>
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-06T16:39:42+08:00">
-                2018-02-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-08T14:34:25+08:00">
+                2018-02-08
               </time>
             
 
@@ -356,10 +356,19 @@
 
       
         <ul>
-<li><a href="https://leetcode.com/problems/roman-to-integer/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
+<li><a href="https://leetcode.com/problems/3sum/description/" target="_blank" rel="noopener">网址</a> <a id="more"></a></li>
 </ul>
 <hr>
-<h1 id="my-answer"><a href="#my-answer" class="headerlink" title="my answer"></a>my answer</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] roman=&#123;<span class="string">'M'</span>,<span class="string">'D'</span>,<span class="string">'C'</span>,<span class="string">'L'</span>,<span class="string">'X'</span>,<span class="string">'V'</span>,<span class="string">'I'</span>&#125;;</span><br><span class="line">        Map&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> times=<span class="number">0</span>,init=<span class="number">5000</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; roman.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(times%<span class="number">2</span>==<span class="number">0</span>) init=init/<span class="number">5</span>;</span><br><span class="line">            <span class="keyword">else</span> init=init/<span class="number">2</span>;</span><br><span class="line">            map.put(roman[i], init);</span><br><span class="line">            times++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">char</span> pre=s.charAt(<span class="number">0</span>),cur;</span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">1</span>,res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(index&lt;s.length())&#123;</span><br><span class="line">            cur=s.charAt(index);</span><br><span class="line">            <span class="keyword">if</span>(map.get(cur)&gt;map.get(pre))&#123;</span><br><span class="line">                res-=map.get(pre);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                res+=map.get(pre);</span><br><span class="line">            &#125;</span><br><span class="line">            pre=cur;</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line">        res+=map.get(pre);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="my-answer"><a href="#my-answer" class="headerlink" title="my answer"></a>my answer</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> l,r,rem;</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;nums[i]==nums[i-<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            rem=-nums[i];</span><br><span class="line">            l=i+<span class="number">1</span>;</span><br><span class="line">            r=nums.length-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[l]+nums[r]==rem)&#123;</span><br><span class="line">                    list.add(Arrays.asList(nums[i],nums[l],nums[r]));</span><br><span class="line">                    l++;</span><br><span class="line">                    r--;</span><br><span class="line">                    <span class="keyword">while</span>(l&lt;r&amp;&amp;nums[l]==nums[l-<span class="number">1</span>])&#123;</span><br><span class="line">                    	l++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">while</span>(l&lt;r&amp;&amp;nums[r]==nums[r+<span class="number">1</span>])&#123;</span><br><span class="line">                    	r--;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[l]+nums[r]&lt;rem)&#123;</span><br><span class="line">                    l++;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    r--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>尴尬的TLE 输入是n个零😂</li>
+<li>参考下面别人的做法 <code>for</code>循环i改成到<code>nums.length-2</code>就OK了</li>
+</ul>
+<h1 id="other’s-answer"><a href="#other’s-answer" class="headerlink" title="other’s answer"></a>other’s answer</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//from shpolsky</span></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] num) &#123;</span><br><span class="line">    Arrays.sort(num);</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;(); </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length-<span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> || (i &gt; <span class="number">0</span> &amp;&amp; num[i] != num[i-<span class="number">1</span>])) &#123;</span><br><span class="line">            <span class="keyword">int</span> lo = i+<span class="number">1</span>, hi = num.length-<span class="number">1</span>, sum = <span class="number">0</span> - num[i];</span><br><span class="line">            <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num[lo] + num[hi] == sum) &#123;</span><br><span class="line">                    res.add(Arrays.asList(num[i], num[lo], num[hi]));</span><br><span class="line">                    <span class="keyword">while</span> (lo &lt; hi &amp;&amp; num[lo] == num[lo+<span class="number">1</span>]) lo++;</span><br><span class="line">                    <span class="keyword">while</span> (lo &lt; hi &amp;&amp; num[hi] == num[hi-<span class="number">1</span>]) hi--;</span><br><span class="line">                    lo++; hi--;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num[lo] + num[hi] &lt; sum) lo++;</span><br><span class="line">                <span class="keyword">else</span> hi--;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>感觉我跟它差不多QAQ</li>
+</ul>
+
       
     </div>
 
@@ -395,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/05/leetcode12/" rel="next" title="12. Integer to Roman">
-                <i class="fa fa-chevron-left"></i> 12. Integer to Roman
+              <a href="/2018/02/06/leetcode14/" rel="next" title="14. Longest Common Prefix">
+                <i class="fa fa-chevron-left"></i> 14. Longest Common Prefix
               </a>
             
           </div>
@@ -405,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/06/leetcode14/" rel="prev" title="14. Longest Common Prefix">
-                14. Longest Common Prefix <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/08/leetcode16/" rel="prev" title="16. 3Sum Closest">
+                16. 3Sum Closest <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#my-answer"><span class="nav-number">1.</span> <span class="nav-text">my answer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#my-answer"><span class="nav-number">1.</span> <span class="nav-text">my answer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#other’s-answer"><span class="nav-number">2.</span> <span class="nav-text">other’s answer</span></a></li></ol></div>
             
 
           </div>
